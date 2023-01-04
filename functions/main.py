@@ -33,7 +33,8 @@ print(add(5, 3, 2))
 def positive(number):
     if number > 0:
         return True
-    else: return False
+    else: 
+        return False
 
 print(positive(50))
 print(positive(-50))
@@ -45,7 +46,8 @@ print(positive(0))
 def negative(number):
     if number < 0:
         return True
-    else: return False
+    else: 
+        return False
 
 print(negative(50))
 print(negative(-50))

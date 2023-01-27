@@ -9,6 +9,7 @@ __human_name__ = 'functions'
 def greet(name):
     return f'Hello, {name}!'
 
+
 print(greet('Bob'))
 
 
@@ -16,6 +17,7 @@ print(greet('Bob'))
 
 def add(n1, n2, n3):
     return n1 + n2 + n3
+
 
 print(add(5, 3, 2))
 
@@ -33,8 +35,9 @@ print(add(5, 3, 2))
 def positive(number):
     if number > 0:
         return True
-    else: 
+    else:
         return False
+
 
 print(positive(50))
 print(positive(-50))
@@ -46,8 +49,9 @@ print(positive(0))
 def negative(number):
     if number < 0:
         return True
-    else: 
+    else:
         return False
+
 
 print(negative(50))
 print(negative(-50))

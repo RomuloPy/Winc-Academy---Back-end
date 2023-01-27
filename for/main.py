@@ -23,6 +23,7 @@ countries = get_countries()
 
 # 1.
 
+
 def shortest_names(countries):
     short_names = []
     for country in countries:
@@ -30,13 +31,14 @@ def shortest_names(countries):
             short_names.append(country)
     print(short_names)
 
+
 shortest_names(countries)
 
 
 # 2.
 
 def most_vowels(countries):
-    
+
     countryVowelsAmount = []
 
     for nation in countries:
@@ -53,6 +55,7 @@ def most_vowels(countries):
         countryVowelsAmountSorted[1],
         countryVowelsAmountSorted[2],
     )
+
 
 most_vowels(countries)
 
@@ -82,5 +85,6 @@ def alphabet_set(countries):
     )
 
     print("alphabet countries length:", len(alphabetCountries))
+
 
 alphabet_set(countries)

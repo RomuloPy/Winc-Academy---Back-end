@@ -12,19 +12,19 @@ def farm_action(weather, time_of_day, cow_milking_status, location_cows, season,
     elif location_cows == 'pasture' and weather == 'rainy':
         return ('take cows to cowshed')
 
-    if cow_milking_status == True and location_cows == 'pasture':
+    if cow_milking_status is True and location_cows == 'pasture':
         return ('take cows to cowshed\nmilk cows\ntake cows back to pasture')
 
-    if slurry_tank == True and location_cows == 'pasture':
+    if slurry_tank is True and location_cows == 'pasture':
         return ('take cows to cowshed\nFertilize pasture\ntake cows back to pasture')
 
-    if grass_status == True and season == 'spring' and weather == 'sunny':
+    if grass_status is True and season == 'spring' and weather == 'sunny':
         return ('take cows to cowshed\nyou can mow the lawn now\ntake cows back to pasture')
 
     if location_cows == 'cowshed' and cow_milking_status == True:
         return ('milk cows')
 
-    if slurry_tank == True and location_cows == 'cowshed' and (weather != 'sunny' or weather != 'windy'):
+    if slurry_tank is True and location_cows == 'cowshed' and (weather != 'sunny' or weather != 'windy'):
         return ('fertilize pasture')
 
     if grass_status is True and season == 'spring' and weather == 'sunny' and location_cows != 'pasture':

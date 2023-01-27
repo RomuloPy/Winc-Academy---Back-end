@@ -6,17 +6,19 @@ __human_name__ = 'lists'
 
 # 1.
 
-film_names = ['Indiana Jones', 
-        'Superman', 
-        'Close Encounters of the Third Kind',
-        'Star Wars', 'Midway',
-        'Jaws',
-        'The Towering Inferno']
+film_names = ['Indiana Jones',
+              'Superman',
+              'Close Encounters of the Third Kind',
+              'Star Wars', 'Midway',
+              'Jaws',
+              'The Towering Inferno']
+
 
 def alphabetical_order(film_names):
 
     film_names.sort()
     return film_names
+
 
 print(alphabetical_order(film_names))
 
@@ -27,13 +29,14 @@ print(alphabetical_order(film_names))
 def won_golden_globe(film):
 
     winners = ['jaws',
-            'star wars: episode iv - a new hope',
-            'e.t. the extra-terrestrial',
-            'memoirs of a geisha']
+               'star wars: episode iv - a new hope',
+               'e.t. the extra-terrestrial',
+               'memoirs of a geisha']
     if film.lower() in winners:
         return True
     else:
         return False
+
 
 print(won_golden_globe('Jaws'))
 
@@ -49,14 +52,15 @@ print(won_golden_globe('Jaws'))
 #                 'Fahrenheit'
 #                 ]
 mixed_list = ['You Are Welcome',
-            'Daddy-O',
-            'I Passed for White',
-            "Because They're Young",
-            'The Secret Ways',
-            'Toto XIV',
-            'Fahrenheit'
-            'Old Is New'
-            ]
+              'Daddy-O',
+              'I Passed for White',
+              "Because They're Young",
+              'The Secret Ways',
+              'Toto XIV',
+              'Fahrenheit'
+              'Old Is New'
+              ]
+
 
 def remove_toto_albums(mixed_list):
 
@@ -75,5 +79,6 @@ def remove_toto_albums(mixed_list):
             mixed_list.remove(item)
 
     return mixed_list
+
 
 print(remove_toto_albums(mixed_list))

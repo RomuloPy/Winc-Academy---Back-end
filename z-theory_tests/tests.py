@@ -118,13 +118,26 @@
 # def test_example_1():
 #     assert 1 == 2
 
-def initials(name):
-    first, last = name.split(' ')
-    f, l = first[0], last[0]
-    return f'{f}. {l}.'
+# def initials(name):
+#     first, last = name.split(' ')
+#     f, l = first[0], last[0]
+#     return f'{f}. {l}.'
 
-def test_initials_common_name():
-    assert initials('Daniel Radcliffe') == 'D. R.'
+# def test_initials_common_name():
+#     assert initials('Daniel Radcliffe') == 'D. R.'
 
-def test_intials_double_barrelled():
-    assert initials('Helena Bonham Carter') == 'H. B. C.'
+# def test_intials_double_barrelled():
+#     assert initials('Helena Bonham Carter') == 'H. B. C.'
+
+
+class Employee:
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.email = first + '.' + last + '@email.com'
+        self.pay = pay
+    
+
+dev1 = Employee('Rómulo', 'Santos', 50000)
+print(dev1.email)

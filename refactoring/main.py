@@ -3,82 +3,63 @@ __human_name__ = "refactoring"
 
 
 class Homeowners:
-
-    def __init__(self, name, profession):
+    def __init__(self, name, address, needs):
         self.name = name
-        self.profession = profession
+        self.address = address
+        self.needs = needs
+        self.contracts = []
+
+    def addContracts(self, specialists: list):
+        for specialist in specialists:
+            if specialist.profession in self.needs:
+                self.contracts.append(specialist.name)
+
+    def printContracts(self):
+        print(self.contracts)
 
 
-alfred_name = "Alfred Alfredson"
-alfred_address = "Alfredslane 123"
-alfred_needs = ["painter", "plumber"]
-bert_name = "Bert Bertson"
-bert_address = "Bertslane 231"
-bert_needs = ["plumber"]
-candice_name = "Candice Candicedottir"
-candice_address = "Candicelane 312"
-candice_needs = ["electrician", "painter"]
-
-
-class Specialists:
-
-    def __init__(self, name, profession):
+class Specialist:
+    def __init__(self, name):
         self.name = name
-        self.address = profession
 
 
-    class Electrician:
-
-        def __init__(self, name):
-            self.name = name
-
-    class Painter:
-
-        def __init__(self, name):
-            self.name = name
-
-    class Plumber:
-
-        def __init__(self, name):
-            self.name = name
-
-alice_name = "Alice Aliceville"
-alice_profession = "electrician"
-bob_name = "Bob Bobsville"
-bob_profession = "painter"
-craig_name = "Craig Craigsville"
-craig_profession = "plumber"
+class Electrician(Specialist):
+    def __init__(self, name):
+        super().__init__(name)
+        self.profession = "electrician"
+        specialists.append(self)
 
 
+class Painter(Specialist):
+    def __init__(self, name):
+        super().__init__(name)
+        self.profession = "painter"
+        specialists.append(self)
 
 
-alfred_contracts = []
-for need in alfred_needs:
-    if need == alice_profession:
-        alfred_contracts.append(alice_name)
-    elif need == bob_profession:
-        alfred_contracts.append(bob_name)
-    elif need == craig_profession:
-        alfred_contracts.append(craig_name)
+class Plumber(Specialist):
+    def __init__(self, name):
+        super().__init__(name)
+        self.profession = "plumber"
+        specialists.append(self)
 
-bert_contracts = []
-for need in bert_needs:
-    if need == alice_profession:
-        bert_contracts.append(alice_name)
-    elif need == bob_profession:
-        bert_contracts.append(bob_name)
-    elif need == craig_profession:
-        bert_contracts.append(craig_name)
 
-candice_contracts = []
-for need in candice_needs:
-    if need == alice_profession:
-        candice_contracts.append(alice_name)
-    elif need == bob_profession:
-        candice_contracts.append(bob_name)
-    elif need == craig_profession:
-        candice_contracts.append(craig_name)
+if __name__ == "__main__":
+    specialists = []
+    alice = Electrician("Alice Aliceville")
+    bob = Painter("Bob Bobsville")
+    craig = Plumber("Craig Craigsville")
 
-print("Alfred's contracts:", alfred_contracts)
-print("Bert's contracts:", bert_contracts)
-print("Candice's contracts:", candice_contracts)
+    alfred = Homeowners("Alfred Alfredson", "Alfredslane 123", ["painter", "plumber"])
+    bert = Homeowners("Bert Bertson", "Bertslane 123", ["plumber"])
+    candice = Homeowners(
+        "Candice Candicedottir", "Candicelane 123", ["electrician", "painter"]
+    )
+
+    alfred.addContracts(specialists)
+    bert.addContracts(specialists)
+    candice.addContracts(specialists)
+
+    alfred.printContracts()
+    bert.printContracts()
+    candice.printContracts()

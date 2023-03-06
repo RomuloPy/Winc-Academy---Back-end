@@ -10,21 +10,21 @@ folder = os.path.join(os.getcwd(), "cache")
 zip_file = os.path.join(os.path.abspath("data.zip"))
 
 
-def clean_cache():
-    if os.path.exists(folder):
-        for file in os.listdir(folder):
-            path_to_file = os.path.join(folder, file)
-            os.remove(path_to_file)
-    else:
-        os.mkdir(folder)
+# def clean_cache():
+#     if os.path.exists(folder):
+#         for file in os.listdir(folder):
+#             path_to_file = os.path.join(folder, file)
+#             os.remove(path_to_file)
+#     else:
+#         os.mkdir(folder)
 
-clean_cache()
+# clean_cache()
 
 
-def cache_zip(zip_file, cache_path):
+# def cache_zip(zip_file, cache_path):
 
-    with ZipFile(zip_file) as zObject:
-        zObject.extractall(cache_path)
+#     with ZipFile(zip_file) as zObject:
+#         zObject.extractall(cache_path)
 
 
 def cached_files():
@@ -45,7 +45,7 @@ def find_password(files_list):
 
 
 if __name__ == "__main__":
-    clean_cache()
-    cache_zip(zip_file, folder)
+    # clean_cache()
+    # cache_zip(zip_file, folder)
     password = find_password(cached_files())
     print(password)
